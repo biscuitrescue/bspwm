@@ -36,7 +36,7 @@ line-size = 1
 ; override-redirect = true
 
 modules-left = workspaces
-modules-center = date sep space title space sep time
+modules-center = space date sep space title space sep time
 modules-right =  cpu space memory space pulseaudio space battery space
 
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11.3;3
