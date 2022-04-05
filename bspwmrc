@@ -9,7 +9,7 @@ picom --experimental-backends -b &
 nm-applet &
 dunst &
 ./.fehbg &
-xfce-polkit &
+# xfce-polkit &
 xss-lock --transfer-sleep-lock -- blurlock --nofork &
 
 
@@ -24,7 +24,7 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config top_padding 0
+bspc config top_padding 34
 bspc config bottom_padding 0
 bspc config focused_border_color "#aed1dc"
 bspc config normal_border_color  "#4c566a"

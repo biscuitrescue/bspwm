@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	  alacritty -o font.size=10
+	kitty
 
 # Files
 super + shift + @space

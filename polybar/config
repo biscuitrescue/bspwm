@@ -1,81 +1,88 @@
 [colors]
-background = #14171d
-foreground = #676b73 
-;foreground = ${xrdb:foreground}
-
-dark-light = #272A2B 
-active-light = #313435
+background = #292d3e
+foreground = #D8DEE9
+foreground2 = #bebebe
+red = #f07178
+green = #c3e88d
+yellow = #ffe585
+blue = #9cc4ff
+purple = #e1acff
+cyan = #a3f7ff
 
 [bar/example]
 tray-position = right
-tray-background = #14171d
+tray-background = ${colors.background}
 monitor = 
 width =  100%
-height = 30
+height = 28
 padding-left = 1
 padding-right = 1
 ;offset-x = 0.5%
 ;offset-y = 0.5%
 ;radius = 16
 
-background = #14171d
+background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = false
-border-top-size = 6
-border-bottom-size = 10
+border-top-size = 4
+border-bottom-size = 8
 border-radius = 16
-border-top-color = #14171d
-border-bottom-color = #14171d
+border-top-color = #292d3e
+border-bottom-color = #292d3e
 
 line-size = 1
-wm-restack = bspwm
 
-modules-left = round-left workspaces round-right
-modules-center = round-left date round-right empty-space round-left title round-right empty-space round-left time round-right
-modules-right =  round-left cpu round-right empty-space round-left memory round-right empty-space round-left pulseaudio round-right empty-space round-left battery round-right
+; wm-restack = bspwm
+; override-redirect = true
+
+modules-left = workspaces
+modules-center = date sep space title space sep time
+modules-right =  cpu space memory space pulseaudio space battery space
 
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11.3;3
 font-1 = JetBrainsMono Nerd Font:size= 20;5
 font-2 = Material Design Icons:style=Bold:size=9;3
 font-3 = unifont:fontformat=truetype:size=9;3
 
-[module/empty-space]
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/pavolume.py
+click-right = exec pavucontrol
+format-foreground = #fefefe
+format-background = #668bd7
+interval=1
+
+[module/sep]
 type = custom/text
-content = " "
+content = " | "
 
 [module/space]
 type = custom/text
-content = "      "
+content = "    "
 
 [module/round-left]
 type = custom/text
 content = %{T3}%{T-}
-content-foreground = #2a2e36
+content-foreground = ${colors.background}
 
 [module/round-right]
 type = custom/text
 content = %{T3}%{T-}
-content-foreground = #2a2e36
-
-[module/roundd-left]
-type = custom/text
-content = %{T3}%{`T-}
-content-foreground = #2a2e36 
-
-[module/roundd-right]
-type = custom/text
-content = %{T3}%{T-}
-content-foreground = #2a2e36
+content-foreground = ${colors.background}
 
 [module/time]
 type = internal/date
 interval = 60
 
+format-prefix= "  "
 format = <label>
-format-background = #2a2e36
-format-foreground = #D8DEE9
+format-background = ${colors.background}
+format-foreground = ${colors.blue}
+format-prefix-foreground = ${colors.blue}
 
-time= "%d %b, %a"
+time= "  %d %b, %a"
 
 label = %time%
 
@@ -83,13 +90,13 @@ label = %time%
 type = internal/date
 interval = 60
 
+format-suffix = " 󰥔 "
 format = <label>
-format-background = #2a2e36
-format-foreground = #D8DEE9
+format-background = ${colors.background}
+format-foreground = ${colors.blue}
+format-suffix-foreground = ${colors.blue}
 
-date = 󰥔 %H:%M%{F-}
-;date = "%a %d %B, %H:%M "
-;time-alt = 󰃭 %a, %b %d%{F-}
+date = "%H:%M%{F-} "
 
 label= %date%
 
@@ -97,31 +104,11 @@ label= %date%
 type = internal/memory
 interval = 2
 format-prefix = " ﬙ " 
-format-prefix-foreground = #D8DEE9
-format-background = #2a2e36
-format-foreground = #FFFFFF
+format-prefix-foreground = ${colors.cyan}
+format-background = ${colors.background}
+format-foreground = ${colors.cyan}
 format = <label>
 label = %mb_used%
-
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-interval = 3.0
-format-connected =  <label-connected>
-label-connected = "󰤪  " 
-label-connected-foreground = #A3BE8C 
-
-[module/spotify]
-type = custom/script
-interval = 1
-;format-prefix = " "
-format = <label>
-exec = python /home/zishaan/.config/polybar/spotify_status.py -f ' {artist} | {song}' -t 25
-format-underline = #14171d
-format-foreground = #D8DEE9
-click-left = playerctl --player=spotify play-pause 
-click-right = playerctl --player=spotify next 
-click-middle = playerctl --player=spotify previous
 
 [module/battery]
 type = internal/battery
@@ -133,16 +120,16 @@ poll-interval = 2
 time-format = %H:%M
 
 format-charging = <animation-charging>  <label-charging>
-format-charging-background = #2a2e36
-format-charging-foreground = #D8DEE9
+format-charging-background = ${colors.background}
+format-charging-foreground = ${colors.green}
 format-charging-padding = 0
 format-discharging = <ramp-capacity>  <label-discharging>
 format-discharging-background = #2a2e36
-format-discharging-foreground = #D8DEE9
+format-discharging-foreground = ${colors.red}
 format-discharging-padding = 0
-format-full =<label-full>
+format-full = <label-full>
 format-full-prefix = "   "
-format-full-background = #2a2e36
+format-full-background = ${colors.background}
 format-full-foreground = #FFFFFF
 format-full-padding = 0
 label-charging = "%percentage%%"
@@ -178,16 +165,16 @@ type = internal/cpu
 interval = 2.0
 format-prefix ="  " 
 format =  <label>
-format-prefix-foreground = #FFFFFF
+format-prefix-foreground = ${colors.purple}
 label = "%percentage%% "
 label-padding = 0
-format-background = #2a2e36
-format-foreground = #FFFFFF
+format-background = ${colors.background}
+format-foreground = ${colors.purple}
 
 [module/title]
 type = internal/xwindow
 format = <label>
-format-background = #2a2e36
+format-background = ${colors.background}
 format-foreground = #FFFFFF
 format-padding = 0
 label = "%title%"
@@ -198,18 +185,19 @@ label-empty-foreground = #FFFFFF
 
 [module/pulseaudio]
 type = internal/pulseaudio
-sink = alsa_output.pci-0000_03_00.6.analog-stereo
+; sink = alsa_output.pci-0000_03_00.6.analog-stereo
+sink=bluez_output.68_DD_37_43_CF_C4.a2dp-sink
 interval = 5
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = #2a2e36
+format-volume-background = ${colors.background}
 format-volume-padding = 1
-format-volume-foreground = #FFFFFF
+format-volume-foreground = ${colors.yellow}
 format-muted = <label-muted>
 format-muted-prefix = "婢 "
-format-muted-background = #2a2e36
+format-muted-background = ${colors.background}
 format-muted-padding = 1
-format-muted-prefix-foreground = #D8DEE9
+format-muted-prefix-foreground = ${colors.yellow}
 
 label-muted = "Muted "
 label-muted-foreground = #D8DEE9 
@@ -234,17 +222,17 @@ format = <label-state>
 label-monitor = %name%
 
 label-active = 
-label-active-foreground = #D8DEE9
-label-active-background = #2a2e36
+label-active-foreground = ${colors.blue}
+label-active-background = ${colors.background}
 label-occupied = 
-label-occupied-foreground = #D8DEE9
-label-occupied-background = #2a2e36
+label-occupied-foreground = ${colors.blue}
+label-occupied-background = ${colors.background}
 label-urgent = 
-label-urgent-foreground = #D8DEE9
-label-urgent-background = #2a2e36
+label-urgent-foreground = ${colors.red}
+label-urgent-background = ${colors.background}
 label-empty = 
-label-empty-foreground = #D8DEE9
-label-empty-background = #2a2e36
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background}
 
 label-active-padding = 2
 label-urgent-padding = 1
