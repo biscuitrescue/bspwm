@@ -1,14 +1,10 @@
-#
-# wm independent hotkeys
-#
-
 # terminal emulator
 super + Return
 	kitty
 
 # Files
 super + shift + @space
-	thunar
+	nautilus
 
 # program launcher
 super + r
@@ -17,7 +13,7 @@ super + z
 	rofi -show window
 super + d
 	rofi -show drun
-	# dmenu_run -i -h 24 -p "RUN:"
+	
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -47,16 +43,12 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {t,shift + t,s,w}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
-#
-# focus/swap
-#
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -147,13 +139,13 @@ XF86AudioStop
 
 ### Brightness
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	light -U 5
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	light -A 5
 
 ### Poweroff
 super + shift + x
-	loginctl poweroff
+	poweroff
 
 ### Screenshots
 Print
@@ -172,5 +164,5 @@ super + alt + shift + @space
 	polybar-msg cmd show
 
 ### Dmscripts
-super + @space + {c,p}
-	bash /home/karttikeya/dmscripts/{dmconf,dmpy}
+super + @space + {c,p,f}
+	bash /home/mr_robot/dmscripts/{dmconf,dmpy,dmfeh}
