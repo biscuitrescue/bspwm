@@ -6,8 +6,9 @@ red = #f07178
 green = #c3e88d
 yellow = #ffe585
 blue = #9cc4ff
-purple = #e1acff
+purple = #ff79c6
 cyan = #a3f7ff
+dark = #d6acff
 
 [bar/example]
 tray-position = right
@@ -37,12 +38,21 @@ line-size = 1
 
 modules-left = workspaces
 modules-center = space date sep title sep time
-modules-right =  cpu space memory space pulseaudio space battery space
+modules-right =  cpu space light space memory space pulseaudio space battery space
 
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11.2;3
 font-1 = JetBrainsMono Nerd Font:size= 40;5
 font-2 = Material Design Icons:style=Bold:size=9;3
 font-3 = unifont:fontformat=truetype:size=9;3
+
+[module/light]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/backlight.py
+format-foreground = ${colors.background}
+format-background = ${colors.dark}
+interval=1
 
 [module/pavolume]
 type = custom/script
