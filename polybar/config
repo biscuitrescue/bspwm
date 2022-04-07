@@ -159,6 +159,7 @@ animation-charging-3 =" "
 animation-charging-4 =" "
 
 animation-charging-framerate = 600
+interval=1
 
 [module/backlight]
 type = internal/backlight
@@ -189,7 +190,7 @@ format-foreground = ${colors.background}
 format-padding = 0
 label = "  %title%  "
 label-maxlen = 30
-label-empty = " BSPWM "
+label-empty = " Bspwm "
 label-empty-foreground = ${colors.background}
 
 
