@@ -10,7 +10,7 @@ nm-applet &
 dunst &
 ./.fehbg &
 # xfce-polkit &
-xss-lock --transfer-sleep-lock -- blurlock --nofork &
+xss-lock --transfer-sleep-lock -- .lock.sh --nofork &
 
 
 # bspc monitor -d  '' '' '' '' '' '' '' '' '' ''
@@ -22,7 +22,7 @@ bspc config window_gap           15
 
 bspc config split_ratio          0.55
 bspc config borderless_monocle   true
-bspc config gapless_monocle      false
+bspc config gapless_monocle      true
 
 bspc config top_padding 34
 bspc config bottom_padding 0

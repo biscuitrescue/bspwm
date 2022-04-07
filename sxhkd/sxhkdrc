@@ -122,6 +122,8 @@ super + alt + shift + {Left,Down,Up,Right}
 # 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 ### Multimedia
+XF86AudioMicMute
+	mictoggle
 XF86AudioLowerVolume
 	pamixer -d 5	
 XF86AudioRaiseVolume
@@ -164,5 +166,5 @@ super + alt + shift + @space
 	polybar-msg cmd show
 
 ### Dmscripts
-super + @space + {c,p,f}
+super + shift + {c,p,f}
 	bash /home/mr_robot/dmscripts/{dmconf,dmpy,dmfeh}
