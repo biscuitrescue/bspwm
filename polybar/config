@@ -40,7 +40,7 @@ modules-left = workspaces
 modules-center = space date sep title sep time
 modules-right =  cpu space light space memory space pulseaudio space battery space
 
-font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11.2;3
+font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11.4;3
 font-1 = JetBrainsMono Nerd Font:size= 40;5
 font-2 = Material Design Icons:style=Bold:size=9;3
 font-3 = unifont:fontformat=truetype:size=9;3
@@ -189,8 +189,8 @@ format-foreground = ${colors.background}
 format-padding = 0
 label = "  %title%  "
 label-maxlen = 30
-label-empty = "Desktop"
-label-empty-foreground = #FFFFFF
+label-empty = " Desktop "
+label-empty-foreground = ${colors.background}
 
 
 [module/pulseaudio]
