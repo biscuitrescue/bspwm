@@ -70,7 +70,7 @@ content = " | "
 
 [module/space]
 type = custom/text
-content = "  "
+content = " "
 
 [module/round-left]
 type = custom/text
@@ -189,7 +189,7 @@ format-foreground = ${colors.background}
 format-padding = 0
 label = "  %title%  "
 label-maxlen = 30
-label-empty = " Desktop "
+label-empty = " BSPWM "
 label-empty-foreground = ${colors.background}
 
 
