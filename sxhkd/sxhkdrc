@@ -2,6 +2,9 @@
 super + Return
 	kitty
 
+super + @space
+	alacritty
+
 # Files
 super + shift + @space
 	nautilus
@@ -149,6 +152,12 @@ XF86MonBrightnessUp
 super + shift + x
 	poweroff
 
+super + KP_Subtract
+	i3lock -c 00000000
+
+super + KP_Add
+	betterlockscreen -l pixel
+
 ### Screenshots
 Print
 	shot
@@ -158,6 +167,9 @@ super + Print
 	crop
 
 ### Applications
+
+ctrl + @space
+	kitty -e ranger
 super + v
 	pavucontrol
 super + alt + @space

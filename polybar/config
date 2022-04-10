@@ -37,7 +37,7 @@ line-size = 1
 ; override-redirect = true
 
 modules-left = workspaces
-modules-center = space date sep title sep time
+modules-center = space space space date sep title sep time
 modules-right =  cpu space light space memory space pulseaudio space battery space
 
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11.4;3
@@ -139,8 +139,8 @@ format-discharging-foreground = ${colors.background}
 format-discharging-padding = 0
 format-full = <label-full>
 format-full-prefix = "   "
-format-full-background = ${colors.background}
-format-full-foreground = #FFFFFF
+format-full-background = ${colors.green}
+format-full-foreground = ${colors.background}
 format-full-padding = 0
 label-charging = " %percentage%% "
 label-discharging = " %percentage%% "
@@ -190,7 +190,7 @@ format-foreground = ${colors.background}
 format-padding = 0
 label = "  %title%  "
 label-maxlen = 30
-label-empty = " Bspwm "
+label-empty = " Desktop "
 label-empty-foreground = ${colors.background}
 
 
