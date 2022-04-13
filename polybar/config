@@ -1,5 +1,5 @@
 [colors]
-background = #292d3e
+background = #1e1e2e
 foreground = #D8DEE9
 foreground2 = #bebebe
 red = #f07178
@@ -14,22 +14,22 @@ dark = #d6acff
 tray-position = right
 tray-background = ${colors.background}
 monitor = 
-width =  100%
-height = 24
+width =  94%
+height = 20
 padding-left = 1
 padding-right = 1
-;offset-x = 0.5%
-;offset-y = 0.5%
+offset-x = 3%
+offset-y = 1%
 ;radius = 16
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 bottom = false
-border-top-size = 6
+border-top-size = 10
 border-bottom-size = 10
 border-radius = 16
-border-top-color = #292d3e
-border-bottom-color = #292d3e
+border-top-color = ${colors.background}
+border-bottom-color = ${colors.background}
 
 line-size = 1
 
