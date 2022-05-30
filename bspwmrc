@@ -7,6 +7,7 @@ libinput-gestures-setup stop &
 libinput-gestures-setup start &
 bash ~/.config/polybar/launch.sh &
 picom --experimental-backends -b &
+autotiling &
 
 nm-applet &
 dunst &
