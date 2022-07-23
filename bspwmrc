@@ -3,11 +3,9 @@
 killall sxhkd &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-libinput-gestures-setup stop &
-libinput-gestures-setup start &
+libinput-gestures-setup restart &
 bash ~/.config/polybar/launch.sh &
-picom --experimental-backends -b &
-autotiling &
+picom -b &
 
 nm-applet &
 dunst &
